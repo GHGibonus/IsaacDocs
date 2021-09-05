@@ -1,3 +1,4 @@
+
 # File "pocketitems.xml"
 
 **Resource-Folder**{: .xmlInfo .red}: Using this file in a resource folder of a mod will replace the original file.
@@ -53,8 +54,9 @@ The anm2 specified in `entities2.xml` should have the animations HUD and HUDSmal
 
 Note that the subtype used in `entities2.xml` and the `pickup` tag **cannot** be used to spawn your card, and will instead crash the game. You must spawn / give your card via the card id, which you can obtain from `Isaac.GetCardIdByName(string cardHudName)` as described above. You can also check your card's current ID easily in the console by typing `g kID` and checking autocomplete; the last base game card is `k97`, the Soul of Jacob, so modded ids will start at `k98`.
 
-Note that cards added through `pocketitems.xml` are **not** automatically added to the card pool, and you must set up their spawning manually. This can be done most easily through the `MC_GET_CARD` callback.
+**Afterbirth+ only**: Custom cards are **not** automatically added to the card pool, and you must spawn them manually. You can use the `MC_GET_CARD` callback for that.
 
+**Repentance only**: Cards are now automatically added to the card pool. Their spawn rate will be equal to that of their `type`. If you want to manipulate the spawn rate of your custom cards or runes, it still can be done with `MC_GET_CARD`. Make sure to remember that your custom card spawns naturally!
 
 ## Pill Effects
 
