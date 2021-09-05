@@ -292,6 +292,9 @@ Returned values will not update the "[Card](Card.md)" arg of later executed call
 ???+ bug
     Returning a value that is not an integer or nil will cause the game to crash.
 
+???+ bug
+    This callback is not called for all card spawns. For example, Rune bag doesn't trigger it when generating a rune.
+
 ???+ warning "Warning"
     The last callback to return a valid return value wins out and overwrites previous callbacks' return values 
 
